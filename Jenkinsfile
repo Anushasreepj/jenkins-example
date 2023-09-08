@@ -1,13 +1,13 @@
 pipeline {
     agent any
  parameters { 
-     string(defaultValue: ')
+     string(defaultValue:'https://github.com/Anushasreepj/jenkins-example.git')
   }          
     stages {
         stage ('Checkout') {
             steps {
                 script {
-                    def gitRepoUrl='
+                    def gitRepoUrl=('https://github.com/Anushasreepj/jenkins-example.git)
                 }
             }
 
@@ -21,10 +21,11 @@ pipeline {
             steps {
                 script { 
                     def tomcatwebappsDir = "/home/ec2-user/apache-tomcat-8.5.93/webapps"
-                    def warFilePath = "${tomcatwebappsDir}${gameoflife.war}"
+                    def warFileName = "gameoflife.war"
+                    def warFilePath ="${tomcatwebappsDir}${warFileName}"
                     if (fileExists(/home/ec2-user/apache-tomcat-8.5.93/webapps/gameoflife.war)) {
-                        echo "Found existing ${war} in Tomcat's webapps directory."
-                        echo"no need to deploy again."
+                        echo "Found existing ${gameoflife} in Tomcat's webapps directory."
+                        bat "start \"\"\"${/home/ec2-user/apache-tomcat-8.5.93/webapp/gameoflife.war}\""
                     } else {
                         error "could not found"
                     }
