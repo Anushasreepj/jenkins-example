@@ -21,18 +21,5 @@ pipeline {
         }
     }
 
-    post {
-        success {
-            echo 'Build and opening successful'
-        }
-        failure {
-            echo 'Build and opening failed'
-        }
-        }
     }
-}
-
-
-
-
     
