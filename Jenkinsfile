@@ -18,8 +18,9 @@ pipeline {
                 def appUrl = "http://54.153.158.154:8088//gameoflife.war" 
                 bat "start http://54.153.158.154:8088"
             }
+            }
         }
     }
+            
 
-    }
-    
+                
