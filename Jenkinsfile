@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('Build Another Application') {
             steps {
-                
                 sh 'mvn clean install' 
             }
         }
@@ -15,12 +14,14 @@ pipeline {
                 def tomcatwebappsDir ="/home/ec2-user/apache-tomcat-8.5.93/webapps"
                 def warFileName = 'gameoflife.war' 
                 def warFilePath ="${tomcatwebappsDir}${warFileName}"
-                def appUrl = "http://54.153.158.154:8088//gameoflife.war" 
-                bat "start http://54.153.158.154:8088"
+                def appUrl = "http://54.153.158.154:8088/gameoflife.war/" 
+                open appUrl
             }
             }
         }
     }
+}
+
             
 
                 
