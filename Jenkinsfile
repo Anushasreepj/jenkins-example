@@ -16,7 +16,7 @@ pipeline {
                 def warFilePath ="${tomcatwebappsDir}${warFileName}"
                 def warFileName = 'gameoflife.war' 
                 def appUrl = "http://54.153.158.154:8088//${gameoflife.war}" 
-                bat "start ${http://54.153.158.154:8088}"
+                bat "start ${http://54.153.158.154:8088 }"
             }
         }
     }
