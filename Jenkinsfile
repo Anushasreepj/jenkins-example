@@ -11,7 +11,7 @@ pipeline {
 
         stage('Open Application') {
             steps {
-                  
+                script {  
                 def tomcatwebappsDir ="/home/ec2-user/apache-tomcat-8.5.93/webapps"
                 def warFileName = 'gameoflife.war' 
                 def warFilePath ="${tomcatwebappsDir}${warFileName}"
@@ -27,7 +27,7 @@ pipeline {
         }
         failure {
             echo 'Build and opening failed'
-           
+        }
         }
     }
 }
