@@ -5,7 +5,8 @@ pipeline {
         stage('open application') {
             steps {
                 script{
-                      def tomcatUrl ='http://54.153.158.154:8088'
+                      def tomcatUrl ='http://54.153.158.154:8088/gameoflife'
+                      def browser = 'chrome'
                       def contextPath ='/gameoflife'
                       sh "curl -u http://54.153.158.154:8088/gameoflife/"
                       def username ='manager'
