@@ -10,7 +10,7 @@ pipeline {
                       sh "curl http://54.153.158.154:8088/gameoflife (1).war"
                       def username ='manager'
                       def password ='manager'
-                      sh "curl -u $manager:$manager http://54.153.158.154:8088/gameoflife (1).war" 
+                      sh "curl -u $username:$password $tomcatUrl$contexrPath" 
             }
         }
         }
