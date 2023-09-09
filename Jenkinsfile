@@ -1,28 +1,21 @@
 pipeline {
     agent any
-         
+
     stages {
-        stage('Build Application') {
+        stage('open application') {
             steps {
-                sh 'mvn clean install' 
+                script{
+                      def tomcatUrl ='http://54.153.158.154:8088'
+                      def contextPath ='gameoflife (1).war
+                      sh "curl http://54.153.158.154:8088/gameoflife (1).war"
+                      def username ='manager'
+                      def password ='manager'
             }
         }
-
-        stage('Open Application') {
-          steps {
-             script { 
-                def tomcatwebappsDir ="/home/ec2-user/apache-tomcat-8.5.93/webapps"
-                def warFileName = 'gameoflife1.war' 
-                def warFilePath ="${tomcatwebappsDir}${warFileName}"
-                def appUrl = "http://54.153.158.154:8088/gameoflife.war/" 
-                def username ='manager'
-                def password ='manager'
-                open appUrl
-            }
-            }
         }
     }
 }
+
 
 
             
