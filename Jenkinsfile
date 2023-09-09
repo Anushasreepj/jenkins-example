@@ -8,7 +8,7 @@ pipeline {
                       def tomcatUrl ='http://54.153.158.154:8088'
                       def contextPath ='/gameoflife (1).war'
                       def encodedContextPath = contextPath.replaceAll(' ','%20')
-                      sh "curl http://54.153.158.154:8088/gameoflife (1)"
+                      sh "curl http://54.153.158.154:8088/gameoflife 1"
                       def username ='manager'
                       def password ='manager'
                       sh "curl -u $username:$password $tomcatUrl$encodedContextPath" 
