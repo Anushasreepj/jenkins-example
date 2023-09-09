@@ -1,6 +1,5 @@
 pipeline {
     agent any
-     environment {
          
     stages {
         stage('Build Application') {
@@ -10,8 +9,8 @@ pipeline {
         }
 
         stage('Open Application') {
-            steps {
-                script { 
+          steps {
+             script { 
                 def tomcatwebappsDir ="/home/ec2-user/apache-tomcat-8.5.93/webapps"
                 def warFileName = 'gameoflife1.war' 
                 def warFilePath ="${tomcatwebappsDir}${warFileName}"
